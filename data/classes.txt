@@ -1,0 +1,1 @@
+{"Join this Site": "/system:join", "Alpha Pirate": "/alpha-pirate", "Berserker (Class)": "/berserker-class", "Dragonslayer": "/dragonslayer", "Guardian": "/guardian", "Mage": "/mage", "Moglomancer": "/moglomancer", "Necromancer": "/necromancer", "Ninja": "/ninja", "Paladin": "/paladin", "Pirate": "/pirate", "Ranger": "/ranger", "Rogue": "/rogue", "Warrior": "/warrior"}
