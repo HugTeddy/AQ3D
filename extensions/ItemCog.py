@@ -6,7 +6,7 @@ from disputils import BotEmbedPaginator
 
 itemlist=[]
 regexmatch=["[[", "]]"]
-wb = openpyxl.load_workbook('../data/AQ3DItemDatabase.xlsx')
+wb = openpyxl.load_workbook('./data/AQ3DItemDatabase.xlsx')
 ws = wb['All']
 for col in ws['B']:
     itemlist.append(col.value.lower())

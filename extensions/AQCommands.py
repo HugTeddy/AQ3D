@@ -13,10 +13,10 @@ from bs4 import BeautifulSoup
 from discord.ext import commands
 from disputils import BotEmbedPaginator
 
-wb = openpyxl.load_workbook('../data/AQ3DItemDatabase.xlsx')
+wb = openpyxl.load_workbook('./data/AQ3DItemDatabase.xlsx')
 ws = wb['Fish']
 
-wiki_files = [os.path.basename(x) for x in glob.glob('../data/*.txt')]
+wiki_files = [os.path.basename(x) for x in glob.glob('./data/*.txt')]
 cat_names = [x[:-4] for x in wiki_files]
 help_msg = """`!char <name>` - Looks up character profile
 `!link` - Links discord account to character profile
@@ -50,7 +50,7 @@ def midnight_time(tz):
     return out
 
 def account(link, id, name="None"):
-    with open (f'../linked_users.txt', 'r') as f:
+    with open (f'./linked_users.txt', 'r') as f:
         data = json.load(f)
     if link == "in":
         if str(id) in data.keys() or name in data.values():
@@ -67,7 +67,7 @@ def account(link, id, name="None"):
             return data[str(id)]
         else:
             return "Null"
-    with open (f'../linked_users.txt', 'w') as f:
+    with open (f'./linked_users.txt', 'w') as f:
         json.dump(data, f)
     return True
 
@@ -147,7 +147,7 @@ class AQ3DCog(commands.Cog):
         else:
             cat = category.lower()
             if cat in cat_names:
-                with open(f'../data/{cat}.txt', 'r') as f:
+                with open(f'./data/{cat}.txt', 'r') as f:
                     data = json.load(f)
                 if search != "None":
                     results={}
@@ -179,7 +179,7 @@ class AQ3DCog(commands.Cog):
             return
         elif option in option_list:
             if option == "rods":
-                with open(f'../data/fish/rods.txt', "r") as f:
+                with open(f'./data/fish/rods.txt', "r") as f:
                     output = f.read()
                 embed = discord.Embed(title="Fishing Rods", description=f'```{output}```', color=0x00ff00)
                 embed.set_thumbnail(url="https://aq3d.com/media/1507/aq3d-full-logo760.png")
@@ -207,7 +207,7 @@ class AQ3DCog(commands.Cog):
                 return
             else:
                 format_fish = []
-                with open(f'../data/fish/fish.txt', "r") as f:
+                with open(f'./data/fish/fish.txt', "r") as f:
                     fish_list = f.readlines()
                 if fish == "None":
                     output = ""
