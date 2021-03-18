@@ -68,6 +68,9 @@ Command | Function
 `!status` | Shows current playercount server status
 `!news` | Shows latest events
 `!time` | Shows current server time and refresh timer
+`!toggleNews` | Toggles channel for news updates
+`!toggleStatus` | Toggles channel for auto updating server status
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
